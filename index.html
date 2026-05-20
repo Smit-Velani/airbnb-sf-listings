@@ -30,27 +30,19 @@
     .logo { color: var(--red); font-size: 1.6rem; font-weight: bold; }
     .nav-links { display: flex; gap: 24px; list-style: none; }
     .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
+      color: var(--dark); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--red); }
 
     /* HERO */
     .hero {
       background: linear-gradient(135deg, #FF385C, #bd1e59);
-      padding: 80px 40px;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
+      padding: 80px 40px; text-align: center; color: white;
+      position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
+      content: ''; position: absolute; top: -50%; left: -50%;
       width: 200%; height: 200%;
       background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
                   radial-gradient(circle at 70% 30%, rgba(255,255,255,0.06) 0%, transparent 50%);
@@ -63,95 +55,33 @@
     .hero-stat .number { font-size: 1.8rem; font-weight: 700; display: block; }
     .hero-stat .label { font-size: 0.85rem; opacity: 0.8; }
     .hero-btn {
-      display: inline-block;
-      background: white;
-      color: var(--red);
-      padding: 12px 32px;
-      border-radius: 24px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: transform 0.2s;
+      display: inline-block; background: white; color: var(--red);
+      padding: 12px 32px; border-radius: 24px; font-weight: 600;
+      text-decoration: none; font-size: 0.95rem; transition: transform 0.2s;
     }
     .hero-btn:hover { transform: scale(1.04); }
 
-    /* ABOUT SF */
-    .about {
-      background: white;
-      padding: 60px 40px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .about h2 { font-size: 1.8rem; margin-bottom: 12px; color: var(--dark); }
-    .about h2 span { color: var(--red); }
-    .about p { color: var(--gray); max-width: 700px; margin: 0 auto 40px; line-height: 1.7; font-size: 0.95rem; }
-    .about-cards { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-    .about-card {
-      background: var(--light);
-      border-radius: 12px;
-      padding: 24px;
-      width: 200px;
-      text-align: center;
-    }
-    .about-card .icon { font-size: 2rem; margin-bottom: 10px; }
-    .about-card h3 { font-size: 1rem; margin-bottom: 6px; }
-    .about-card p { font-size: 0.82rem; color: var(--gray); margin: 0; }
-
-    /* NEIGHBORHOODS */
-    .neighborhoods {
-      background: var(--light);
-      padding: 60px 40px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .neighborhoods h2 { font-size: 1.8rem; margin-bottom: 8px; }
-    .neighborhoods h2 span { color: var(--red); }
-    .neighborhoods p { color: var(--gray); margin-bottom: 32px; font-size: 0.95rem; }
-    .hood-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .hood-tag {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 8px 20px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: var(--dark);
-    }
-    .hood-tag:hover { background: var(--red); color: white; border-color: var(--red); }
-
     /* CONTROLS */
     .controls {
-      max-width: 1200px;
-      margin: 30px auto 12px;
-      padding: 0 24px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
+      max-width: 1200px; margin: 30px auto 12px;
+      padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
     }
     .controls input, .controls select {
-      padding: 10px 16px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      font-size: 0.95rem;
-      outline: none;
-      background: white;
+      padding: 10px 16px; border: 1px solid var(--border);
+      border-radius: 24px; font-size: 0.95rem; outline: none; background: white;
     }
     .controls input { flex: 1; min-width: 200px; }
     .controls input:focus, .controls select:focus { border-color: var(--red); }
 
     .stats { max-width: 1200px; margin: 0 auto 16px; padding: 0 24px; color: var(--gray); font-size: 0.9rem; }
 
+    /* GRID */
     .grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      max-width: 1200px; margin: 0 auto; padding: 0 24px 60px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;
     }
 
+    /* CARD */
     .card {
       background: white; border-radius: 12px; overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -193,14 +123,46 @@
     .rating { font-size: 0.82rem; color: var(--gray); }
     .star { color: var(--red); }
 
+    /* LOADING */
     .loading { grid-column: 1/-1; text-align: center; padding: 60px; color: var(--gray); }
     .spinner {
-      width: 40px; height: 40px;
-      border: 4px solid #eee; border-top: 4px solid var(--red);
-      border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+      width: 40px; height: 40px; border: 4px solid #eee;
+      border-top: 4px solid var(--red); border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin: 0 auto 16px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* ABOUT SF */
+    .about {
+      background: white; padding: 60px 40px;
+      text-align: center; border-bottom: 1px solid var(--border);
+    }
+    .about h2 { font-size: 1.8rem; margin-bottom: 12px; color: var(--dark); }
+    .about h2 span { color: var(--red); }
+    .about p { color: var(--gray); max-width: 700px; margin: 0 auto 40px; line-height: 1.7; font-size: 0.95rem; }
+    .about-cards { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .about-card { background: var(--light); border-radius: 12px; padding: 24px; width: 200px; text-align: center; }
+    .about-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .about-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .about-card p { font-size: 0.82rem; color: var(--gray); margin: 0; }
+
+    /* NEIGHBORHOODS */
+    .neighborhoods {
+      background: var(--light); padding: 60px 40px;
+      text-align: center; border-bottom: 1px solid var(--border);
+    }
+    .neighborhoods h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    .neighborhoods h2 span { color: var(--red); }
+    .neighborhoods p { color: var(--gray); margin-bottom: 32px; font-size: 0.95rem; }
+    .hood-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .hood-tag {
+      background: white; border: 1px solid var(--border);
+      border-radius: 24px; padding: 8px 20px; font-size: 0.9rem;
+      cursor: pointer; transition: all 0.2s; color: var(--dark);
+    }
+    .hood-tag:hover { background: var(--red); color: white; border-color: var(--red); }
+
+    /* MODAL */
     .modal-overlay {
       display: none; position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -227,11 +189,8 @@
 
     /* FOOTER */
     footer {
-      background: var(--dark);
-      color: #aaa;
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
+      background: var(--dark); color: #aaa;
+      text-align: center; padding: 24px; font-size: 0.85rem;
     }
     footer span { color: var(--red); }
   </style>
@@ -239,10 +198,10 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
+  <nav id="top">
     <div class="logo">airbnb</div>
     <ul class="nav-links">
-      <li><a href="#listings">Home</a></li>
+      <li><a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Home</a></li>
       <li><a href="#about">About SF</a></li>
       <li><a href="#neighborhoods">Neighborhoods</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -252,7 +211,7 @@
   <!-- HERO -->
   <div class="hero">
     <h1>Find Your Perfect Stay in San Francisco</h1>
-    <p>Don't just visit San Francisco — live it. Browse 50 handpicked stays across the city's most iconic neighborhoods.</p>
+    <p>Don't just visit San Francisco. Live it. Browse 50 handpicked stays across the city's most iconic neighborhoods.</p>
     <div class="hero-stats">
       <div class="hero-stat"><span class="number">50</span><span class="label">Listings</span></div>
       <div class="hero-stat"><span class="number">20+</span><span class="label">Neighborhoods</span></div>
@@ -260,36 +219,6 @@
       <div class="hero-stat"><span class="number">$80</span><span class="label">Starting Price</span></div>
     </div>
     <a href="#listings" class="hero-btn">Explore Listings ↓</a>
-  </div>
-
-  <!-- ABOUT SF -->
-  <div class="about" id="about">
-    <h2>Why <span>San Francisco?</span></h2>
-    <p>San Francisco is one of the most vibrant and diverse cities in the world. From the iconic Golden Gate Bridge to the buzzing Mission District, every neighborhood tells its own story. Whether you're here for business, adventure, or relaxation — SF has a stay for you.</p>
-    <div class="about-cards">
-      <div class="about-card"><div class="icon">🌉</div><h3>Iconic Views</h3><p>Golden Gate, Bay Bridge & stunning skylines</p></div>
-      <div class="about-card"><div class="icon">🍜</div><h3>World-Class Food</h3><p>Michelin stars to Mission burritos</p></div>
-      <div class="about-card"><div class="icon">🌁</div><h3>Culture & Arts</h3><p>Museums, galleries & live music</p></div>
-      <div class="about-card"><div class="icon">🚃</div><h3>Easy Transit</h3><p>BART, Muni & walkable streets</p></div>
-      <div class="about-card"><div class="icon">☀️</div><h3>Great Weather</h3><p>Mild temps year round</p></div>
-    </div>
-  </div>
-
-  <!-- NEIGHBORHOODS -->
-  <div class="neighborhoods" id="neighborhoods">
-    <h2>Explore <span>Neighborhoods</span></h2>
-    <p>Click a neighborhood to filter listings in that area</p>
-    <div class="hood-tags">
-      <span class="hood-tag" onclick="filterByHood('Mission')">Mission</span>
-      <span class="hood-tag" onclick="filterByHood('Noe Valley')">Noe Valley</span>
-      <span class="hood-tag" onclick="filterByHood('Bernal Heights')">Bernal Heights</span>
-      <span class="hood-tag" onclick="filterByHood('Western Addition')">Western Addition</span>
-      <span class="hood-tag" onclick="filterByHood('Haight Ashbury')">Haight Ashbury</span>
-      <span class="hood-tag" onclick="filterByHood('Castro')">Castro</span>
-      <span class="hood-tag" onclick="filterByHood('Pacific Heights')">Pacific Heights</span>
-      <span class="hood-tag" onclick="filterByHood('SoMa')">SoMa</span>
-      <span class="hood-tag" onclick="filterByHood('')">Show All</span>
-    </div>
   </div>
 
   <!-- LISTINGS -->
@@ -312,6 +241,36 @@
     <div class="stats" id="stats"></div>
     <div class="grid" id="grid">
       <div class="loading"><div class="spinner"></div>Loading SF listings...</div>
+    </div>
+  </div>
+
+  <!-- ABOUT SF -->
+  <div class="about" id="about">
+    <h2>Why <span>San Francisco?</span></h2>
+    <p>San Francisco is one of the most vibrant and diverse cities in the world. From the iconic Golden Gate Bridge to the buzzing Mission District, every neighborhood tells its own story. Whether you are here for business, adventure, or relaxation, SF has a stay for you.</p>
+    <div class="about-cards">
+      <div class="about-card"><div class="icon">🌉</div><h3>Iconic Views</h3><p>Golden Gate, Bay Bridge and stunning skylines</p></div>
+      <div class="about-card"><div class="icon">🍜</div><h3>World-Class Food</h3><p>Michelin stars to Mission burritos</p></div>
+      <div class="about-card"><div class="icon">🌁</div><h3>Culture and Arts</h3><p>Museums, galleries and live music</p></div>
+      <div class="about-card"><div class="icon">🚃</div><h3>Easy Transit</h3><p>BART, Muni and walkable streets</p></div>
+      <div class="about-card"><div class="icon">☀️</div><h3>Great Weather</h3><p>Mild temps year round</p></div>
+    </div>
+  </div>
+
+  <!-- NEIGHBORHOODS -->
+  <div class="neighborhoods" id="neighborhoods">
+    <h2>Explore <span>Neighborhoods</span></h2>
+    <p>Click a neighborhood to filter listings in that area</p>
+    <div class="hood-tags">
+      <span class="hood-tag" onclick="filterByHood('Mission')">Mission</span>
+      <span class="hood-tag" onclick="filterByHood('Noe Valley')">Noe Valley</span>
+      <span class="hood-tag" onclick="filterByHood('Bernal Heights')">Bernal Heights</span>
+      <span class="hood-tag" onclick="filterByHood('Western Addition')">Western Addition</span>
+      <span class="hood-tag" onclick="filterByHood('Haight Ashbury')">Haight Ashbury</span>
+      <span class="hood-tag" onclick="filterByHood('Castro')">Castro</span>
+      <span class="hood-tag" onclick="filterByHood('Pacific Heights')">Pacific Heights</span>
+      <span class="hood-tag" onclick="filterByHood('SoMa')">SoMa</span>
+      <span class="hood-tag" onclick="filterByHood('')">Show All</span>
     </div>
   </div>
 
@@ -372,14 +331,14 @@
     function renderListings(listings) {
       const grid = document.getElementById("grid");
       const stats = document.getElementById("stats");
-      stats.textContent = `Showing ${listings.length} of 50 San Francisco listings`;
+      stats.textContent = "Showing " + listings.length + " of 50 San Francisco listings";
 
       if (!listings.length) {
         grid.innerHTML = `<div class="loading">No listings found.</div>`;
         return;
       }
 
-      grid.innerHTML = listings.map((l, i) => {
+      grid.innerHTML = listings.map(function(l, i) {
         const name = l.name || "Unnamed Listing";
         const desc = stripHtml(l.description || "");
         const price = l.price || "N/A";
@@ -391,29 +350,18 @@
         const roomType = l.room_type || "";
         const amenities = parseAmenities(l.amenities).slice(0, 4);
 
-        return `
-          <div class="card" onclick="openModal(${i})">
-            ${thumbnail ? `<img class="card-img" src="${thumbnail}" alt="${name}" loading="lazy" />` : `<div class="card-img-placeholder">🏠</div>`}
-            <div class="card-body">
-              <div class="card-top">
-                <div class="card-title">${name}</div>
-                <span class="badge">${getPriceBadge(price)}</span>
-              </div>
-              <div class="card-neighborhood">📍 ${neighborhood} ${roomType}</div>
-              <div class="card-desc">${desc}</div>
-              <div class="host">
-                ${hostImg ? `<img class="host-img" src="${hostImg}" alt="${hostName}" />` : `<div class="host-img"></div>`}
-                <span class="host-name">Hosted by ${hostName}</span>
-              </div>
-              <div class="amenities">
-                ${amenities.map(a => `<span class="amenity-tag">${a}</span>`).join("")}
-              </div>
-              <div class="card-footer">
-                <div class="price">${price} <span>/ night</span></div>
-                <div class="rating"><span class="star">★</span> ${rating}</div>
-              </div>
-            </div>
-          </div>`;
+        return '<div class="card" onclick="openModal(' + i + ')">' +
+          (thumbnail ? '<img class="card-img" src="' + thumbnail + '" alt="' + name + '" loading="lazy" />' : '<div class="card-img-placeholder">🏠</div>') +
+          '<div class="card-body">' +
+          '<div class="card-top"><div class="card-title">' + name + '</div><span class="badge">' + getPriceBadge(price) + '</span></div>' +
+          '<div class="card-neighborhood">📍 ' + neighborhood + ' ' + roomType + '</div>' +
+          '<div class="card-desc">' + desc + '</div>' +
+          '<div class="host">' +
+          (hostImg ? '<img class="host-img" src="' + hostImg + '" alt="' + hostName + '" />' : '<div class="host-img"></div>') +
+          '<span class="host-name">Hosted by ' + hostName + '</span></div>' +
+          '<div class="amenities">' + amenities.map(function(a) { return '<span class="amenity-tag">' + a + '</span>'; }).join("") + '</div>' +
+          '<div class="card-footer"><div class="price">' + price + ' <span>/ night</span></div><div class="rating"><span class="star">★</span> ' + rating + '</div></div>' +
+          '</div></div>';
       }).join("");
     }
 
@@ -436,10 +384,10 @@
         return matchSearch && matchRoom;
       });
 
-      if (sort === "price-asc") filtered.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
-      else if (sort === "price-desc") filtered.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
-      else if (sort === "rating") filtered.sort((a, b) => (b.review_scores_rating || 0) - (a.review_scores_rating || 0));
-      else if (sort === "name") filtered.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+      if (sort === "price-asc") filtered.sort(function(a, b) { return parsePrice(a.price) - parsePrice(b.price); });
+      else if (sort === "price-desc") filtered.sort(function(a, b) { return parsePrice(b.price) - parsePrice(a.price); });
+      else if (sort === "rating") filtered.sort(function(a, b) { return (b.review_scores_rating || 0) - (a.review_scores_rating || 0); });
+      else if (sort === "name") filtered.sort(function(a, b) { return (a.name || "").localeCompare(b.name || ""); });
 
       renderListings(filtered);
     }
@@ -454,21 +402,18 @@
       const rating = l.review_scores_rating || "N/A";
       const amenities = parseAmenities(l.amenities).slice(0, 12);
 
-      document.getElementById("modal-content").innerHTML = `
-        ${thumbnail ? `<img class="modal-thumb" src="${thumbnail}" alt="${l.name}" />` : ""}
-        <h2>${l.name || "Listing"}</h2>
-        <div class="modal-meta">📍 ${l.neighbourhood_cleansed || ""} · ${l.room_type || ""} · ★ ${rating}</div>
-        <div class="modal-price">${price} <span style="font-weight:400;font-size:0.9rem;color:#717171">/ night</span></div>
-        <div class="modal-host">
-          ${hostImg ? `<img class="host-img" src="${hostImg}" style="width:36px;height:36px;border-radius:50%;object-fit:cover" />` : ""}
-          <span>Hosted by <strong>${hostName}</strong></span>
-        </div>
-        <div class="modal-desc">${desc.slice(0, 500)}${desc.length > 500 ? "..." : ""}</div>
-        <div class="modal-amenities">
-          ${amenities.map(a => `<span class="amenity-tag">${a}</span>`).join("")}
-        </div>
-        ${l.listing_url ? `<a class="modal-link" href="${l.listing_url}" target="_blank">View on Airbnb →</a>` : ""}
-      `;
+      document.getElementById("modal-content").innerHTML =
+        (thumbnail ? '<img class="modal-thumb" src="' + thumbnail + '" alt="' + (l.name || "") + '" />' : "") +
+        '<h2>' + (l.name || "Listing") + '</h2>' +
+        '<div class="modal-meta">📍 ' + (l.neighbourhood_cleansed || "") + ' · ' + (l.room_type || "") + ' · ★ ' + rating + '</div>' +
+        '<div class="modal-price">' + price + ' <span style="font-weight:400;font-size:0.9rem;color:#717171">/ night</span></div>' +
+        '<div class="modal-host">' +
+        (hostImg ? '<img class="host-img" src="' + hostImg + '" style="width:36px;height:36px;border-radius:50%;object-fit:cover" />' : "") +
+        '<span>Hosted by <strong>' + hostName + '</strong></span></div>' +
+        '<div class="modal-desc">' + desc.slice(0, 500) + (desc.length > 500 ? "..." : "") + '</div>' +
+        '<div class="modal-amenities">' + amenities.map(function(a) { return '<span class="amenity-tag">' + a + '</span>'; }).join("") + '</div>' +
+        (l.listing_url ? '<a class="modal-link" href="' + l.listing_url + '" target="_blank">View on Airbnb →</a>' : "");
+
       document.getElementById("modal-overlay").classList.add("active");
     }
 
