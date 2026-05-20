@@ -136,12 +136,16 @@
     .about {
       background: white; padding: 60px 40px;
       text-align: center; border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s, border 0.3s;
     }
     .about h2 { font-size: 1.8rem; margin-bottom: 12px; color: var(--dark); }
     .about h2 span { color: var(--red); }
     .about p { color: var(--gray); max-width: 700px; margin: 0 auto 40px; line-height: 1.7; font-size: 0.95rem; }
     .about-cards { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-    .about-card { background: var(--light); border-radius: 12px; padding: 24px; width: 200px; text-align: center; }
+    .about-card {
+      background: var(--light); border-radius: 12px; padding: 24px; width: 200px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
     .about-card .icon { font-size: 2rem; margin-bottom: 10px; }
     .about-card h3 { font-size: 1rem; margin-bottom: 6px; }
     .about-card p { font-size: 0.82rem; color: var(--gray); margin: 0; }
@@ -150,6 +154,7 @@
     .neighborhoods {
       background: var(--light); padding: 60px 40px;
       text-align: center; border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s, border 0.3s;
     }
     .neighborhoods h2 { font-size: 1.8rem; margin-bottom: 8px; }
     .neighborhoods h2 span { color: var(--red); }
@@ -161,6 +166,30 @@
       cursor: pointer; transition: all 0.2s; color: var(--dark);
     }
     .hood-tag:hover { background: var(--red); color: white; border-color: var(--red); }
+
+    /* HIGHLIGHT ANIMATION */
+    .section-highlight {
+      box-shadow: 0 0 0 4px var(--red);
+      border-radius: 4px;
+    }
+    .section-highlight .about-card {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(255,56,92,0.2);
+    }
+    .section-highlight .hood-tag {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    /* FOOTER HIGHLIGHT */
+    footer {
+      background: var(--dark); color: #aaa;
+      text-align: center; padding: 24px; font-size: 0.85rem;
+      transition: box-shadow 0.3s;
+    }
+    footer span { color: var(--red); }
+    footer.section-highlight { box-shadow: 0 0 0 4px var(--red); }
 
     /* MODAL */
     .modal-overlay {
@@ -186,13 +215,6 @@
       display: inline-block; background: var(--red); color: white;
       padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.9rem;
     }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark); color: #aaa;
-      text-align: center; padding: 24px; font-size: 0.85rem;
-    }
-    footer span { color: var(--red); }
   </style>
 </head>
 <body>
@@ -202,9 +224,9 @@
     <div class="logo">airbnb</div>
     <ul class="nav-links">
       <li><a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Home</a></li>
-      <li><a href="#about">About SF</a></li>
-      <li><a href="#neighborhoods">Neighborhoods</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" onclick="scrollAndHighlight('about')">About SF</a></li>
+      <li><a href="#neighborhoods" onclick="scrollAndHighlight('neighborhoods')">Neighborhoods</a></li>
+      <li><a href="#contact" onclick="scrollAndHighlight('contact')">Contact</a></li>
     </ul>
   </nav>
 
@@ -291,6 +313,18 @@
     let allListings = [];
     let filtered = [];
 
+    function scrollAndHighlight(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth" });
+      setTimeout(function() {
+        el.classList.add("section-highlight");
+        setTimeout(function() {
+          el.classList.remove("section-highlight");
+        }, 2000);
+      }, 600);
+    }
+
     function getPriceBadge(price) {
       const p = parseFloat((price || "0").replace(/[$,]/g, "")) || 0;
       if (p < 100) return "💚 Budget";
@@ -324,7 +358,7 @@
         renderListings(filtered);
       } catch (err) {
         document.getElementById("grid").innerHTML =
-          `<div class="loading">❌ Could not load JSON. Make sure airbnb_sf_listings_500.json is in the same folder.</div>`;
+          '<div class="loading">❌ Could not load JSON. Make sure airbnb_sf_listings_500.json is in the same folder.</div>';
       }
     }
 
@@ -334,7 +368,7 @@
       stats.textContent = "Showing " + listings.length + " of 50 San Francisco listings";
 
       if (!listings.length) {
-        grid.innerHTML = `<div class="loading">No listings found.</div>`;
+        grid.innerHTML = '<div class="loading">No listings found.</div>';
         return;
       }
 
