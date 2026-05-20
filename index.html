@@ -159,17 +159,16 @@
   <div class="controls">
     <input type="text" id="search" placeholder="🔍 Search by name or neighborhood..." oninput="filterListings()" />
     <select id="sort" onchange="filterListings()">
-      <option value="" selected>Sort by</option>
+      <option value="">Sort by</option>
       <option value="price-asc">Price: Low to High</option>
       <option value="price-desc">Price: High to Low</option>
       <option value="rating">Top Rated</option>
       <option value="name">Name A–Z</option>
     </select>
     <select id="room-filter" onchange="filterListings()">
-      <option value="" selected>All Room Types</option>
+      <option value="">All Room Types</option>
       <option value="Entire home/apt">Entire Home</option>
       <option value="Private room">Private Room</option>
-      <option value="Shared room">Shared Room</option>
     </select>
   </div>
 
@@ -194,7 +193,7 @@
     let filtered = [];
 
     function getPriceBadge(price) {
-      const p = parseFloat(price.replace(/[$,]/g, "")) || 0;
+      const p = parseFloat((price || "0").replace(/[$,]/g, "")) || 0;
       if (p < 100) return "💚 Budget";
       if (p < 200) return "⭐ Popular";
       if (p < 350) return "✨ Premium";
@@ -212,8 +211,9 @@
     function parseAmenities(amenities) {
       try {
         if (Array.isArray(amenities)) return amenities;
-        return JSON.parse(amenities) || [];
-      } catch {
+        if (typeof amenities === "string") return JSON.parse(amenities);
+        return [];
+      } catch (e) {
         return [];
       }
     }
@@ -286,7 +286,7 @@
       const sort = document.getElementById("sort").value;
       const roomFilter = document.getElementById("room-filter").value;
 
-      filtered = allListings.filter(l => {
+      filtered = allListings.filter(function(l) {
         const name = (l.name || "").toLowerCase();
         const hood = (l.neighbourhood_cleansed || "").toLowerCase();
         const matchSearch = !search || name.includes(search) || hood.includes(search);
